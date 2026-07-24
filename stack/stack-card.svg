@@ -1,0 +1,89 @@
+<svg viewBox="0 0 900 310" xmlns="http://www.w3.org/2000/svg"
+     font-family="'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#79c0ff"/>
+      <stop offset="100%" stop-color="#d2a8ff"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#30363d"/>
+      <stop offset="50%" stop-color="#58a6ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#30363d"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- 카드 -->
+  <g filter="url(#softShadow)">
+    <rect x="20" y="14" width="860" height="282" rx="12" fill="#0d1117" stroke="url(#border)"/>
+  </g>
+
+  <!-- 타이틀 -->
+  <text x="44" y="48" font-size="18" font-weight="700" fill="#e6edf3">Tech Stack</text>
+  <rect x="44" y="56" height="3" rx="1.5" fill="url(#accent)" width="0">
+    <animate attributeName="width" begin="0.2s" dur="0.6s" values="0;96" fill="freeze"/>
+  </rect>
+
+  <!-- 카테고리 라벨 / 칩 정렬 기준선 -->
+  <line x1="158" y1="72" x2="158" y2="272" stroke="#21262d"/>
+
+  <!-- FRONTEND -->
+  <g opacity="0">
+    <animate attributeName="opacity" begin="0.4s" dur="0.5s" values="0;1" fill="freeze"/>
+    <text x="44" y="95" font-size="12" letter-spacing="2" fill="#8b949e">FRONTEND</text>
+    <g font-size="13" fill="#e6edf3">
+      <rect x="170" y="76" width="80" height="28" rx="14" fill="#61DAFB" fill-opacity="0.1" stroke="#61DAFB" stroke-opacity="0.5"/>
+      <circle cx="185" cy="90" r="4" fill="#61DAFB"/><text x="197" y="95">React</text>
+      <rect x="260" y="76" width="120" height="28" rx="14" fill="#F7DF1E" fill-opacity="0.1" stroke="#F7DF1E" stroke-opacity="0.5"/>
+      <circle cx="275" cy="90" r="4" fill="#F7DF1E"/><text x="287" y="95">JavaScript</text>
+      <rect x="390" y="76" width="72" height="28" rx="14" fill="#646CFF" fill-opacity="0.12" stroke="#646CFF" stroke-opacity="0.6"/>
+      <circle cx="405" cy="90" r="4" fill="#8a90ff"/><text x="417" y="95">Vite</text>
+    </g>
+  </g>
+
+  <!-- BACKEND -->
+  <g opacity="0">
+    <animate attributeName="opacity" begin="0.7s" dur="0.5s" values="0;1" fill="freeze"/>
+    <text x="44" y="147" font-size="12" letter-spacing="2" fill="#8b949e">BACKEND</text>
+    <g font-size="13" fill="#e6edf3">
+      <rect x="170" y="128" width="72" height="28" rx="14" fill="#EC8B2F" fill-opacity="0.1" stroke="#EC8B2F" stroke-opacity="0.5"/>
+      <circle cx="185" cy="142" r="4" fill="#EC8B2F"/><text x="197" y="147">Java</text>
+      <rect x="252" y="128" width="128" height="28" rx="14" fill="#6DB33F" fill-opacity="0.1" stroke="#6DB33F" stroke-opacity="0.5"/>
+      <circle cx="267" cy="142" r="4" fill="#6DB33F"/><text x="279" y="147">Spring Boot</text>
+      <rect x="390" y="128" width="64" height="28" rx="14" fill="#BC85E3" fill-opacity="0.1" stroke="#BC85E3" stroke-opacity="0.5"/>
+      <circle cx="405" cy="142" r="4" fill="#BC85E3"/><text x="417" y="147">JPA</text>
+    </g>
+  </g>
+
+  <!-- DATABASE -->
+  <g opacity="0">
+    <animate attributeName="opacity" begin="1.0s" dur="0.5s" values="0;1" fill="freeze"/>
+    <text x="44" y="199" font-size="12" letter-spacing="2" fill="#8b949e">DATABASE</text>
+    <g font-size="13" fill="#e6edf3">
+      <rect x="170" y="180" width="80" height="28" rx="14" fill="#4479A1" fill-opacity="0.14" stroke="#4479A1" stroke-opacity="0.7"/>
+      <circle cx="185" cy="194" r="4" fill="#6cb6ff"/><text x="197" y="199">MySQL</text>
+      <rect x="260" y="180" width="120" height="28" rx="14" fill="#4169E1" fill-opacity="0.14" stroke="#4169E1" stroke-opacity="0.7"/>
+      <circle cx="275" cy="194" r="4" fill="#7a9bff"/><text x="287" y="199">PostgreSQL</text>
+      <rect x="390" y="180" width="104" height="28" rx="14" fill="#3FCF8E" fill-opacity="0.1" stroke="#3FCF8E" stroke-opacity="0.5"/>
+      <circle cx="405" cy="194" r="4" fill="#3FCF8E"/><text x="417" y="199">Supabase</text>
+    </g>
+  </g>
+
+  <!-- INFRA · TOOLS -->
+  <g opacity="0">
+    <animate attributeName="opacity" begin="1.3s" dur="0.5s" values="0;1" fill="freeze"/>
+    <text x="44" y="251" font-size="12" letter-spacing="2" fill="#8b949e">INFRA·TOOLS</text>
+    <g font-size="13" fill="#e6edf3">
+      <rect x="170" y="232" width="88" height="28" rx="14" fill="#2496ED" fill-opacity="0.12" stroke="#2496ED" stroke-opacity="0.6"/>
+      <circle cx="185" cy="246" r="4" fill="#2496ED"/><text x="197" y="251">Docker</text>
+      <rect x="268" y="232" width="88" height="28" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.35"/>
+      <circle cx="283" cy="246" r="4" fill="#ffffff"/><text x="295" y="251">Vercel</text>
+      <rect x="366" y="232" width="64" height="28" rx="14" fill="#F05032" fill-opacity="0.1" stroke="#F05032" stroke-opacity="0.5"/>
+      <circle cx="381" cy="246" r="4" fill="#F05032"/><text x="393" y="251">Git</text>
+      <rect x="440" y="232" width="64" height="28" rx="14" fill="#E37400" fill-opacity="0.12" stroke="#E37400" stroke-opacity="0.6"/>
+      <circle cx="455" cy="246" r="4" fill="#E37400"/><text x="467" y="251">GA4</text>
+    </g>
+  </g>
+</svg>

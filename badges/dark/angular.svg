@@ -1,0 +1,11 @@
+<svg viewBox="0 0 90 32" width="90" height="32" xmlns="http://www.w3.org/2000/svg"
+     font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif">
+  <rect x="0.5" y="0.5" width="89" height="31" rx="8" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="89" height="31" rx="8" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="0.5" y="0.5" width="89" height="31" rx="8" fill="none"
+        stroke="#FFFFFF" stroke-opacity="0.55"/>
+  <g transform="translate(10,8) scale(0.6666666666666666)">
+    <path d="M16.712 17.711H7.288l-1.204 2.916L12 24l5.916-3.373-1.204-2.916ZM14.692 0l7.832 16.855.814-12.856L14.692 0ZM9.308 0 .662 3.999l.814 12.856L9.308 0Zm-.405 13.93h6.198L12 6.396 8.903 13.93Z" fill="#FFFFFF"/>
+  </g>
+  <text x="33" y="21" font-size="13" font-weight="700" letter-spacing="0.2" fill="#e6edf3">Angular</text>
+</svg>

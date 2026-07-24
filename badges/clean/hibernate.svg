@@ -1,0 +1,10 @@
+<svg viewBox="0 0 101 32" width="101" height="32" xmlns="http://www.w3.org/2000/svg"
+     font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif">
+  <rect x="0.5" y="0.5" width="100" height="31" rx="8" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="100" height="31" rx="8" fill="none"
+        stroke="#d0d7de"/>
+  <g transform="translate(10,8) scale(0.6666666666666666)">
+    <path d="M5.365 0L9.98 7.994h8.95L14.31 0H5.366zm-.431.248L.46 7.994l4.613 8.008L9.55 8.24 4.934.248zm13.992 7.75l-4.475 7.76 4.617 7.992 4.471-7.744-4.613-8.008zm-4.905 8.006l-8.95.002L9.688 24h8.946l-4.615-7.994.001-.002Z" fill="#59666C"/>
+  </g>
+  <text x="33" y="21" font-size="13" font-weight="600" letter-spacing="0.2" fill="#24292f">Hibernate</text>
+</svg>

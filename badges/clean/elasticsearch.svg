@@ -1,0 +1,10 @@
+<svg viewBox="0 0 127 32" width="127" height="32" xmlns="http://www.w3.org/2000/svg"
+     font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif">
+  <rect x="0.5" y="0.5" width="126" height="31" rx="8" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="126" height="31" rx="8" fill="none"
+        stroke="#d0d7de"/>
+  <g transform="translate(10,8) scale(0.6666666666666666)">
+    <path d="M13.394 0C8.683 0 4.609 2.716 2.644 6.667h15.641a4.77 4.77 0 0 0 3.073-1.11c.446-.375.864-.785 1.247-1.243l.001-.002A11.974 11.974 0 0 0 13.394 0zM1.804 8.889a12.009 12.009 0 0 0 0 6.222h14.7a3.111 3.111 0 1 0 0-6.222zm.84 8.444C4.61 21.283 8.684 24 13.395 24c3.701 0 7.011-1.677 9.212-4.312l-.001-.002a9.958 9.958 0 0 0-1.247-1.243 4.77 4.77 0 0 0-3.073-1.11z" fill="#005571"/>
+  </g>
+  <text x="33" y="21" font-size="13" font-weight="600" letter-spacing="0.2" fill="#24292f">Elasticsearch</text>
+</svg>
