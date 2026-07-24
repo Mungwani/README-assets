@@ -2,7 +2,7 @@
 
 <!-- 이 문서는 scripts/generate_badges.py 가 자동 생성합니다. 직접 수정하지 마세요. -->
 
-개별 기술 뱃지 89종. `clean/`(밝은 문서 톤)과 `dark/`(GitHub 다크 톤) 두 스타일로 제공됩니다.
+개별 기술 뱃지 90종. `clean/`(밝은 문서 톤)과 `dark/`(GitHub 다크 톤) 두 스타일로 제공됩니다.
 
 사용할 뱃지의 마크다운을 그대로 복사해 README에 붙여넣으세요:
 
@@ -51,6 +51,7 @@
 | 기술 | Clean | Dark | slug |
 |---|---|---|---|
 | Spring Boot | ![Spring Boot](clean/springboot.svg) | ![Spring Boot](dark/springboot.svg) | `springboot` |
+| Spring Security | ![Spring Security](clean/springsecurity.svg) | ![Spring Security](dark/springsecurity.svg) | `springsecurity` |
 | Hibernate | ![Hibernate](clean/hibernate.svg) | ![Hibernate](dark/hibernate.svg) | `hibernate` |
 | Node.js | ![Node.js](clean/nodedotjs.svg) | ![Node.js](dark/nodedotjs.svg) | `nodedotjs` |
 | Express | ![Express](clean/express.svg) | ![Express](dark/express.svg) | `express` |

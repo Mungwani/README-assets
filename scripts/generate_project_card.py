@@ -4,13 +4,16 @@
 PROJECTS 리스트에 프로젝트를 추가하면 projects/cards/<slug>.svg 배너가 생성된다.
 카드는 제목·기간·역할·한줄소개·스택 로고까지만 담고, ERD/아키텍처/트러블슈팅처럼
 분량이 긴 내용은 마크다운의 <details> 접기 블록에 작성한다.
-(SVG는 <img>로 삽입되는 순간 클릭 인터랙션이 죽기 때문에, "자세히 보기"는
- SVG가 아니라 GitHub 네이티브 <details> 태그로 구현하는 것이 정석이다.)
+(SVG는 <img>로 삽입되는 순간 클릭 인터랙션이 죽기 때문에, 카드 안에는
+ "자세히 보기" 같은 가짜 링크를 넣지 않는다 — 실제 펼치기 버튼은
+ 카드 아래의 <details> 태그가 담당한다.)
 
 실행: python3 scripts/generate_project_card.py
 """
 import re
 from pathlib import Path
+
+from textwidth import text_width as _text_width
 
 ROOT = Path(__file__).resolve().parent.parent
 ICONS = ROOT / "scripts" / "icons"
@@ -51,7 +54,7 @@ PROJECTS = [
 ]
 
 LINE_H = 19
-DESC_MAX_CHARS = 46
+CARD_CONTENT_WIDTH = 732  # x=44 ~ x=776, 설명 텍스트가 채울 수 있는 최대 폭
 
 
 def icon_path(slug):
@@ -63,12 +66,14 @@ def escape(text):
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def wrap(text, max_chars=DESC_MAX_CHARS):
+def wrap(text, max_width=CARD_CONTENT_WIDTH):
+    """실제 렌더링 폭 기준으로 줄바꿈 — 카드 가로 폭을 최대한 채우고,
+    넘칠 때만 다음 줄로 넘어간다 (왼쪽에 짧게 몰리는 것 방지)."""
     words = text.split(" ")
     lines, cur = [], ""
     for w in words:
         candidate = f"{cur} {w}".strip()
-        if len(candidate) > max_chars and cur:
+        if _text_width(candidate, 13) > max_width and cur:
             lines.append(cur)
             cur = w
         else:
@@ -89,7 +94,7 @@ def build(slug, title, period, role, desc, stack):
     accent_y = desc_y0 + (len(desc_lines) - 1) * LINE_H + 20
     icon_y = accent_y + 24
     icon_size = 20
-    card_bottom = icon_y + icon_size + 26
+    card_bottom = icon_y + icon_size + 22
     svg_h = card_bottom + 8
 
     icons = []
@@ -134,8 +139,6 @@ def build(slug, title, period, role, desc, stack):
   </rect>
 
 {chr(10).join(icons)}
-
-  <text x="776" y="{icon_y + icon_size - 2}" text-anchor="end" font-size="12" fill="#8b949e">자세히 보기 ↓</text>
 </svg>
 '''
     OUT.mkdir(parents=True, exist_ok=True)

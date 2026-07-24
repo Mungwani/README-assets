@@ -1,8 +1,8 @@
-<svg viewBox="0 0 79 32" width="79" height="32" xmlns="http://www.w3.org/2000/svg"
+<svg viewBox="0 0 82 32" width="82" height="32" xmlns="http://www.w3.org/2000/svg"
      font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif">
-  <rect x="0.5" y="0.5" width="78" height="31" rx="8" fill="#0d1117"/>
-  <rect x="0.5" y="0.5" width="78" height="31" rx="8" fill="#9d7bff" fill-opacity="0.08"/>
-  <rect x="0.5" y="0.5" width="78" height="31" rx="8" fill="none"
+  <rect x="0.5" y="0.5" width="81" height="31" rx="8" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="81" height="31" rx="8" fill="#9d7bff" fill-opacity="0.08"/>
+  <rect x="0.5" y="0.5" width="81" height="31" rx="8" fill="none"
         stroke="#9d7bff" stroke-opacity="0.55"/>
   <g transform="translate(10,8) scale(0.6666666666666666)">
     <path d="M24 24H0V0h24L12 12Z" fill="#9d7bff"/>

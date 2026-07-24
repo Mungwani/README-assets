@@ -9,6 +9,8 @@ badges/dark/<slug>.svg, badges/clean/<slug>.svg 두 스타일과
 import re
 from pathlib import Path
 
+from textwidth import text_width as _text_width
+
 ROOT = Path(__file__).resolve().parent.parent
 ICONS = ROOT / "scripts" / "icons"
 OUT = ROOT / "badges"
@@ -47,6 +49,7 @@ CATEGORIES = [
     ]),
     ("Backend / Framework", [
         ("springboot",        "Spring Boot",    "#6DB33F", None),
+        ("springsecurity",    "Spring Security","#6DB33F", None),
         ("hibernate",         "Hibernate",      "#59666C", "#BC85E3"),
         ("nodedotjs",         "Node.js",        "#5FA04E", None),
         ("express",           "Express",        "#000000", "#FFFFFF"),
@@ -135,10 +138,11 @@ BASELINE = 21  # 13px 텍스트를 높이 32 기준 세로 중앙에
 FONT = "Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif"
 
 # 스타일: 다크(포인트 강조) / 클린(밝은 배경·회색 테두리로 통일된 기업 문서 느낌)
+# weight_factor: font-weight가 굵을수록 글자 폭이 살짝 넓어지는 것을 보정
 STYLES = {
     "dark": {
         "font": FONT,
-        "font_size": 13, "font_weight": 700, "letter_spacing": 0.2, "char_w": 7.6,
+        "font_size": 13, "font_weight": 700, "letter_spacing": 0.2, "weight_factor": 1.08,
         "bg": "#0d1117", "text": "#e6edf3",
         # 테두리·틴트·로고 모두 브랜드 컬러(어두운 브랜드는 보정색)
         "brand_border": True, "tint_opacity": 0.08, "border_opacity": 0.55,
@@ -146,7 +150,7 @@ STYLES = {
     },
     "clean": {
         "font": FONT,
-        "font_size": 13, "font_weight": 600, "letter_spacing": 0.2, "char_w": 7.4,
+        "font_size": 13, "font_weight": 600, "letter_spacing": 0.2, "weight_factor": 1.04,
         "bg": "#ffffff", "text": "#24292f",
         # 테두리는 회색으로 통일, 색은 로고에만 (원래 브랜드 컬러 그대로)
         "brand_border": False, "border": "#d0d7de",
@@ -166,14 +170,6 @@ TEMPLATE = """<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" xmlns="http://
 </svg>
 """
 
-NARROW = set("ijltf.r ")  # 폭이 좁은 글자는 절반 폭으로 계산해 오른쪽 여백을 핏하게
-
-
-def text_width(label, char_w):
-    units = sum(0.55 if ch in NARROW else 1.0 for ch in label)
-    return round(units * char_w)
-
-
 def icon_path(slug):
     svg = (ICONS / f"{slug}.svg").read_text()
     m = re.search(r'<path d="([^"]+)"', svg)
@@ -184,7 +180,7 @@ def icon_path(slug):
 
 def build(style_name, style, slug, label, color, dark_fix):
     effective = (dark_fix or color) if style["use_dark_fix"] else color
-    text_w = text_width(label, style["char_w"])
+    text_w = round(_text_width(label, style["font_size"], style["weight_factor"]))
     w = PAD_L + LOGO + GAP + text_w + PAD_R
 
     if style["brand_border"]:

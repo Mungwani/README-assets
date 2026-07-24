@@ -1,7 +1,7 @@
-<svg viewBox="0 0 97 32" width="97" height="32" xmlns="http://www.w3.org/2000/svg"
+<svg viewBox="0 0 103 32" width="103" height="32" xmlns="http://www.w3.org/2000/svg"
      font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif">
-  <rect x="0.5" y="0.5" width="96" height="31" rx="8" fill="#ffffff"/>
-  <rect x="0.5" y="0.5" width="96" height="31" rx="8" fill="none"
+  <rect x="0.5" y="0.5" width="102" height="31" rx="8" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="102" height="31" rx="8" fill="none"
         stroke="#d0d7de"/>
   <g transform="translate(10,8) scale(0.6666666666666666)">
     <path d="M1.44 0v7.575l6.561 3.79V3.787zm21.12 4.227l-6.561 3.791v7.574l6.56-3.787zM8.72 4.23v7.575l6.561 3.787V8.018zm0 8.405v7.575L15.28 24v-7.578z" fill="#844FBA"/>
